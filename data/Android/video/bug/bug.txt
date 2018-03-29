@@ -1,0 +1,10 @@
+视频播放模块bug：
+
+1.MediaHTTPConnection: readAt 7010266 / 2086 => java.net.ProtocolException: unexpected end of stream 
+  可能：
+	1>视频流 头信息出错，content-length不正确(可能现象6.0上出错，弹出错误码：-1004,6.0以下正常)
+
+2.熄屏后视频自动开始播放 bug:
+  可能：横屏播放视频界面在横竖屏切换时，重新调用生命周期方法导致
+  解决方法：在androidManifest.xml 中添加android:configChanges="orientation|screenSize"，并且在onPause方法中调用videoview.pause();
+

@@ -1,0 +1,6 @@
+MediaPlayer抛出错误码：
+
+-1004：MEDIA_ERROR_IO
+	/** File or network related operation errors. */
+	可能出错情况：使用videocache等第三方缓存库时，本地流，头请求信息不正确，content-length不正确
+
